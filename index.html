@@ -1,0 +1,132 @@
+<a href=""></a><!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>LG-REYNA</title>
+   
+    <link rel="stylesheet" href="chat.css">
+    <link rel="stylesheet" href="home.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="static/css/caga-codigo.css">
+
+</head>
+
+<body>
+   
+    <!-- CHAT BAR BLOCK -->
+    <div class="chat-bar-collapsible">
+        <button id="chat-button" type="submit" class="collapsible"> a aga Click aca para igresar al bot
+            
+        </button>
+
+        <div class="content">
+            <div class="full-chat-block">
+                <!-- Message Contai="="<""ner -->
+                <div class="outer-container">
+                    <div class="chat-container">
+                        <!-- Messages -->
+                        <div id="chatbox">
+                            <h5 id="chat-timestamp"></h5>
+                            <p id="botStarterMessage" class="botText"><span>             </body>
+                            </html></span></p>
+                        </div>
+
+                        <!-- User input box -->
+                        <div class="chat-bar-input-block">
+                            <div id="userInput">
+                                <input id="textInput"  class="input-box" type="text" name="msg"
+                                    placeholder="Escribe el textos aca..  ">
+                             <p></p>
+                            </div>
+
+                            <div class="chat-bar-icons">
+                                  <i id="chat-icon" style="color: crimson;" class="fa fa-fw fa-heart"
+                                    onclick="heartButton()"></i>  
+                          
+                          <i id="chat-icon" style="color: #333;" class="fa fa-fw fa-send"
+                                    onclick="sendButton()"></i>                            
+                                    
+                            </div>
+                        </div>
+
+                        <div id="chat-bar-bottom">
+                            <p></p>
+                        </div>
+
+                    </div>
+                </div>
+
+            </div>
+        </div>
+
+    </div>
+
+</body>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+
+<script src="responses.js"></script>
+
+<script src="chat.js"></script>
+
+
+</html>
+
+
+
+
+
+
+
+
+<!-- esenciales
+<i id="chat-icon" style="color: #fff;" class="fa fa-fw fa-comments-o"></i> -->
+
+
+<script>
+     // Obtener todos los botones de copia
+const copyBtns = document.querySelectorAll('.copy-btn');
+
+// Añadir un evento de clic a cada botón de copia
+copyBtns.forEach(btn => {
+  btn.addEventListener('click', () => {
+    // Obtener el código del bloque de código asociado al botón de copia
+    const codeBlock = btn.parentNode.parentNode.querySelector('.code-block');
+    const code = codeBlock.innerText;
+
+    // Crear un elemento de textarea temporal y asignarle el código
+    const tempTextarea = document.createElement('textarea');
+    tempTextarea.value = code;
+
+    // Añadir el elemento de textarea al DOM y seleccionarlo
+    document.body.appendChild(tempTextarea);
+    tempTextarea.select();
+
+    // Copiar el contenido del textarea al portapapeles
+    document.execCommand('copy');
+
+    // Eliminar el elemento de textarea temporal
+    document.body.removeChild(tempTextarea);
+  });
+});
+</script>
+
+
+
+
+
+
+  <script>
+    $(document).ready(function() {
+      $('#textInput').on('input', function() {
+        var texto = $(this).val();
+        var textoModificado = texto.toLowerCase(); // Convertir todo el texto a minúsculas
+        if (texto !== textoModificado) { // Comprobar si se cambió algo
+          $(this).val(textoModificado); // Establecer el nuevo valor del campo de entrada
+          $('#texto-procesado').text(textoModificado); // Actualizar el elemento HTML con el texto procesado
+        }
+      });
+    });
+</script>
